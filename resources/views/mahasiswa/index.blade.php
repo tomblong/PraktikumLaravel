@@ -9,7 +9,7 @@
 MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="an
 onymous">
 </head>
-<body>
+<body style="margin-top:20px;">
     <div class="container">
         @if(session('sukses'))
         <div class="alert alert-success" role="alert">
@@ -17,14 +17,21 @@ onymous">
         </div>
         @endif
         <div class="row">
-            <div class="col-6">
-                <h1>Data Mahasiswa</h1>
-            </div>
-            <div class="col-6">
+        <h1> Data Mahasiswa </h1>
+        </div>
+        <div class="row">
+                <div class="col" style="margin-top: 15px;">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-sm floatright" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary my-2 my-sm-0 floatright" data-toggle="modal" data-target="#exampleModal">
                     Tambah Data
                 </button>
+                </div>
+                <div class="col">
+                <form class="form-inline my-2 my-lg0" method="GET" action="/mahasiswa">
+                    <input name="cari" class="form-control w-75 mr-sm2" id="search" placeholder="Cari">
+                    <button type="submit" class="btn btn-outline-secondary my-2 my-sm0">Cari</button>
+                </form>
+                </div>
             </div>
             <table class="table table-hover">
                 <tr>
@@ -52,7 +59,7 @@ onymous">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Masukkan data mahasiswa</h5>
                     <button type="button" class="close" data-dismiss="modal" arialabel="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,20 +68,20 @@ onymous">
                     <form action="/mahasiswa/create" method="POST">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama</label>
-                            <input name="nama" type="text" class="formcontrol" id="exampleInputEmail1" aria-describedby="EmailHelp" placeholder="Nama">
+                            <label class="col-2" for="exampleInputEmail1">Nama</label>
+                            <input class="col-12" name="nama" type="text" class="formcontrol" id="exampleInputEmail1" aria-describedby="EmailHelp" placeholder="Nama">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">NIM</label>
-                            <input name="nim" type="text" class="formcontrol" id="exampleInputEmail1" aria-describedby="EmailHelp" placeholder="NIM">
+                            <label class="col-2" for="exampleInputEmail1">NIM</label>
+                            <input class="col-12" name="nim" type="text" class="formcontrol" id="exampleInputEmail1" aria-describedby="EmailHelp" placeholder="NIM">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Alamat</label>
-                            <textarea name="alamat" class="formcontrol" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label class="col-2" for="exampleFormControlTextarea1" >Alamat</label>
+                            <textarea class="col-12" name="alamat" class="formcontrol" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" datadismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
