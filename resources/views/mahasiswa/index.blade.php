@@ -48,12 +48,17 @@ onymous">
                     <td>
                     <a href="/mahasiswa/{{$mahasiswa->id}}/edit" class = "btn btn-warning btn-sm">Edit</a>
                     <a href="/mahasiswa/delete/{{$mahasiswa->id}}" class = "btn btn-warning btn-sm" onclick="return confirm('yakin mau dihapus?')">Delete</a>
+                    
                     </td>
                 </tr>
                 @endforeach
             </table>
+            <a a  href="/mahasiswa/exportpdf" class = "btn btn-sm btn-success">Export PDF</a>
         </div>
+        
+        
     </div>
+    
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::post('/mahasiswa/create', [App\Http\Controllers\MahasiswaController::clas
 Route::get('/mahasiswa/{id}/edit', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mahasiswa');
 Route::post('/mahasiswa/{id}/update', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('mahasiswa');
 Route::get('/mahasiswa/delete/{id}', [App\Http\Controllers\MahasiswaController::class, 'delete'])->name('mahasiswa');
+Route::get('/mahasiswa/exportpdf', [App\Http\Controllers\MahasiswaController::class, 'exportpdf'])->name('mahasiswa');
