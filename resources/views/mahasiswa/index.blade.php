@@ -39,6 +39,7 @@ onymous">
                     <th>NIM</th>
                     <th>ALAMAT</th>
                     <th>AKSI</th>
+                    
                 </tr>
                 @foreach($data_mahasiswa as $mahasiswa)
                 <tr>
